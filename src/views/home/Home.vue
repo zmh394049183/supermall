@@ -5,6 +5,7 @@
     </nav-bar>
     <home-swiper :banners="banners"></home-swiper>
     <recommend-view :recommends="recommends"></recommend-view>
+    <feature></feature>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import NavBar from "components/common/navbar/NavBar";
 import { getHomeMultidata } from "network/home";
 import HomeSwiper from './childcomponents/HomeSwiper'
 import RecommendView from './childcomponents/RecommendView'
+import Feature from './childcomponents/Feature'
 export default {
   name: "Home",
   data() {
@@ -24,7 +26,8 @@ export default {
   components: {
     NavBar,
     HomeSwiper,
-    RecommendView
+    RecommendView,
+    Feature
   },
   created() {
     getHomeMultidata().then(res => {
